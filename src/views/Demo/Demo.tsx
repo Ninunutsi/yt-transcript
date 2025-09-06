@@ -46,7 +46,8 @@ export default function VideoWithTranscript() {
 
         window.onYouTubeIframeAPIReady = () => {
           const ytPlayer = new window.YT.Player("yt-player", {
-            width: "100%",
+            width: "400px",
+            height: "300px",
             videoId: "FkQWpQd9Zdo",
             events: {
               onReady: () => setPlayer(ytPlayer),
@@ -95,7 +96,10 @@ export default function VideoWithTranscript() {
   }, [currentTime, filteredTranscript]);
 
   const jumpToTime = (time: number) => {
-    if (player) player.seekTo(time, true);
+    if (player) {
+      console.log("ha");
+      player.seekTo(time, true);
+    }
   };
 
   const copyTranscript = () => {
@@ -170,7 +174,7 @@ export default function VideoWithTranscript() {
       </AnimatePresence>
 
       <motion.div
-        className="w-full xl:w-[48%]"
+        className="w-full xl:w-[52%]"
         initial={{ x: -200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -181,7 +185,7 @@ export default function VideoWithTranscript() {
       </motion.div>
 
       <motion.div
-        className="w-full xl:w-[49%] p-5 lg:p-10 rounded-2xl bg-bg_blue shadow relative overflow-x-hidden"
+        className="w-full xl:w-[45%] p-5 lg:p-10 rounded-2xl bg-bg_blue shadow relative overflow-x-hidden"
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -195,7 +199,7 @@ export default function VideoWithTranscript() {
           />
         </div>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-          <h3 className="flex gap-3 items-center text-xl xl:text-2xl text-ghost_white">
+          <h3 className="flex gap-3 items-center text-md text-ghost_white">
             <IoDocumentTextOutline color="white" size={22} />
             Transcript
           </h3>
@@ -223,23 +227,24 @@ export default function VideoWithTranscript() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search..."
-            icon={<FiSearch color="white" size={22} />}
-            className="h-12 sm:h-14 text-base sm:text-lg"
+            icon={<FiSearch color="white" size={19} />}
+            className="h-12  text-sm"
           />
         </div>
 
         <div
           ref={transcriptRef}
-          className="max-h-[400px] sm:max-h-[400px] overflow-y-auto pr-2 mt-3"
+          className="max-h-[300px] overflow-y-auto pr-2 mt-3"
         >
           {filteredTranscript?.map((line, index) => {
             const isActive =
               currentTime >= line.start && currentTime < line.end;
+            console.log(isActive, "is active");
             return (
               <p
                 key={index}
                 data-active={isActive ? "true" : "false"}
-                className={`border text-base sm:text-lg rounded-lg py-3 sm:py-5 px-2 my-2.5 cursor-pointer ${
+                className={`border text-sm rounded-lg py-3 px-2 my-2.5 cursor-pointer ${
                   isActive
                     ? "font-bold bg-blue-950 text-blue-500 border-blue-500"
                     : "font-normal text-white border-blue-900"
@@ -267,7 +272,7 @@ export default function VideoWithTranscript() {
             <BsStars color="white" size={22} />
             AI Summary
           </h3>
-          <p className="mt-3 bg-[#141a3ec3] rounded-2xl p-4 xl:p-5 text-ghost_white text-base xl:text-lg">
+          <p className="mt-3 bg-[#141a3ec3] rounded-2xl p-4 xl:p-5 text-ghost_white text-sm">
             The video takes viewers on a journey through the vast scales of the
             universe, exploring the tiniest particles to the largest cosmic
             structures. It explains complex scientific concepts in a simple and

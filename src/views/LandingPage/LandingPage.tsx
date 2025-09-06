@@ -9,7 +9,7 @@ const fadeUpVariant = {
 
 const LandingPage = () => {
   return (
-    <div className="position xl:mt-28 ">
+    <div className="position mt-20 ">
       <motion.div
         variants={fadeUpVariant}
         initial="hidden"
