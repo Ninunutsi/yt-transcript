@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #000000;
+  --color-dark_purple: #3d2645;
+  --color-byzantium: #832161;
+  --color-cerise: #da4167;
+  --color-ghost_white: #f0eff4;
+
+  --color-bg_blue: #142145;
+}
+
+@layer components {
+  .position {
+    @apply max-w-[1200px] m-auto;
+  }
+
+  .btn-primary {
+    @apply bg-gray-200 text-gray-800 py-2 px-4 rounded hover:bg-gray-300;
+  }
+}
+
+body {
+  background-image: linear-gradient(to right, #0d1429, #1f398a);
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+@keyframes gradient-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-border {
+  background-size: 200% 200%;
+  animation: gradient-border 2s linear infinite;
+}
