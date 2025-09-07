@@ -79,19 +79,6 @@ export default function AppReadme() {
           <li>React Icons</li>
         </ul>
       </div>
-
-      <div className="space-y-4">
-        <h2 className="text-2xl font-semibold">Installation</h2>
-        <pre className="bg-[#141a3ec3] p-4 rounded-lg overflow-x-auto text-white">
-          <code>
-            git clone
-            https://github.com/yourusername/video-transcript-explorer.git{"\n"}
-            cd video-transcript-explorer{"\n"}
-            npm install{"\n"}
-            npm run dev
-          </code>
-        </pre>
-      </div>
     </div>
   );
 }
