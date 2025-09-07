@@ -3,7 +3,7 @@ import { IoDocumentTextOutline } from "react-icons/io5";
 
 export default function AppReadme() {
   return (
-    <div className="p-10 space-y-6 text-ghost_white rounded-2xl shadow-lg max-w mx-auto text-lg">
+    <div className="sm:p-2 space-y-2 text-ghost_white rounded-2xl shadow-lg max-w mx-auto text-lg">
       <h1 className="text-3xl font-bold flex items-center gap-3">
         <IoDocumentTextOutline size={30} /> Video Transcript Explorer
       </h1>
