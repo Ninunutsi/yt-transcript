@@ -1,10 +1,9 @@
 interface TranscriptLine {
-  start: number; // seconds
-  end: number; // seconds
+  start: number;
+  end: number;
   text: string;
 }
 
-// Transcript converted to seconds
 export const transcript: TranscriptLine[] = [
   { start: 0, end: 5.2, text: "this is Earth" },
   { start: 5.2, end: 8.71, text: "this is where you live and this is where" },

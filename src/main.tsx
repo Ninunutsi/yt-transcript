@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Demo, LandingPage, Layout, ReadMe } from "./views";
+import { Demo, LandingPage, Layout, NotFound, ReadMe } from "./views";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -13,6 +13,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="demo" element={<Demo />} />
           <Route path="read-me" element={<ReadMe />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
